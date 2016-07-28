@@ -1,0 +1,35 @@
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by comp0cker (http://jsbin.com/zabodi/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<p>Type in the number of candies you have for each Pokemon.</p>
+
+Pidgey : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
+Caterpie : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
+Weedle : <input onblur="findTotal()" type="text" name="qty" id="qty3"/><br>
+Rattata : <input onblur="findTotal()" type="text" name="qty" id="qty4"/><br>
+Oddish : <input onblur="findTotal()" type="text" name="qty" id="qty5"/><br>
+Drowzee : <input onblur="findTotal()" type="text" name="qty" id="qty6"/><br>
+Spearow : <input onblur="findTotal()" type="text" name="qty" id="qty7"/><br>
+Misc 50 candy Pokemon : <input onblur="findTotal()" type="text" name="qty" id="qty8"/><br>
+<br><br>
+Total candies : <input type="text" name="total" id="total"/>
+
+
+    <script type="text/javascript">
+function findTotal(){
+    var arr = document.getElementsByName('qty');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('total').value = tot;
+}
+
+    </script>
