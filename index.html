@@ -47,11 +47,35 @@ Misc 50 candy Pokemon : <input onblur="findTotal()" type="text" name="qty" id="q
 
 <br>
 
+<header>
+  <h2>
+    Mass Evolution Calculator
+  </h2>
+  <h3>Type in the number of candies you have for each Pokemon.</h3>
+</header>
+
+You might have to click a Text Box to refresh the total.
+
+<br><br>
+
+Pidgey : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
+Caterpie : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
+Weedle : <input onblur="findTotal()" type="text" name="qty" id="qty3"/><br>
+Rattata : <input onblur="findTotal()" type="text" name="qty" id="qty4"/><br>
+Oddish : <input onblur="findTotal()" type="text" name="qty" id="qty5"/><br>
+Drowzee : <input onblur="findTotal()" type="text" name="qty" id="qty6"/><br>
+Spearow : <input onblur="findTotal()" type="text" name="qty" id="qty7"/><br>
+Misc 50 candy Pokemon : <input onblur="findTotal()" type="text" name="qty" id="qty8"/><br>
+
+<br>
+
 Lucky Egg? <input type="checkbox" id="egg">
 
 <br><br>
 
-Total XP : <input type="text" name="total" id="total" value=0>
+<button onclick="myFunction()">Calculate!</button>
+<p id="demo"></p>
+<br><br>
 
 
     <script type="text/javascript">
@@ -73,7 +97,7 @@ function findTotal(){
           }
     }
   tot *= multiplier;
-    document.getElementById('total').value = tot;
+document.getElementById("demo").innerHTML = tot;
 }
 
     </script>
