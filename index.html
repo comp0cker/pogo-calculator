@@ -64,7 +64,7 @@ Lucky Egg? <input type="checkbox" id="egg">
     <script type="text/javascript">
 function findTotal(){
     var arr = document.getElementsByName('qty');
-    var tot;
+    var tot = 0;
     var string;
     
     if (egg.checked)
@@ -90,7 +90,7 @@ string = "Without a Lucky Egg, you will get ";
   string += tot;
   string += " XP when you mass evolve!";
   
-document.getElementById("demo").innerHTML = tot;
+document.getElementById("demo").innerHTML = string;
 }
 
     </script>
