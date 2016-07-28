@@ -31,7 +31,13 @@
 <a id="welcome-to-pogo-toolkit" class="anchor" href="#welcome-to-pogo-toolkit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to pogo-toolkit</h3>
 <p>Some functions that'll help you for Pokemon GO.</p>
 
-<p>Type in the number of candies you have for each Pokemon.</p>
+<header>
+  <h2>
+    Mass Evolution Calculator
+  </h2>
+  <h3>Type in the number of candies you have for each Pokemon.</h3>
+</header>
+
 
 Pidgey : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
 Caterpie : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
@@ -41,8 +47,39 @@ Oddish : <input onblur="findTotal()" type="text" name="qty" id="qty5"/><br>
 Drowzee : <input onblur="findTotal()" type="text" name="qty" id="qty6"/><br>
 Spearow : <input onblur="findTotal()" type="text" name="qty" id="qty7"/><br>
 Misc 50 candy Pokemon : <input onblur="findTotal()" type="text" name="qty" id="qty8"/><br>
+
+<br>
+
+Lucky Egg? <input type="checkbox" id="egg">
+
 <br><br>
-Total candies : <input type="text" name="total" id="total"/>
+
+Total XP : <input type="text" name="total" id="total" value=0>
+
+
+    <script type="text/javascript">
+function findTotal(){
+    var arr = document.getElementsByName('qty');
+    var tot=0;
+              var multiplier = 1;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+          {
+            if (egg.checked)
+              multiplier = 2
+            if (i >= 0 && i <= 2)
+            tot += 500 * Math.floor(parseInt(arr[i].value) / 12);
+                        else if (i >= 3 && i <= 4)
+            tot += 500 * parseInt(arr[i].value) / 25;
+                        else if (i >= 5)
+            tot += 1000 * parseInt(arr[i].value) / 50;
+          }
+    }
+  tot *= multiplier;
+    document.getElementById('total').value = tot;
+}
+
+    </script>
 
 
     <script type="text/javascript">
